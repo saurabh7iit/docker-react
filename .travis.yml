@@ -3,7 +3,7 @@ services:
   - docer
 
 before_install:
-  - docker build -t mytag -f Dockerfile.dev
+  - docker build -t mytag -f Dockerfile.dev .
 
 script:
   - docker run mytag npm run test -- --coverage
