@@ -1,9 +1,9 @@
 sudo: required
 services:
-  - docer
+  - docker
 
 before_install:
   - docker build -t mytag -f Dockerfile.dev .
 
 script:
-  - docker run mytag npm run test -- --coverage
+  - docker run -e CI=true mytag npm run test -- --coverage
